@@ -1,6 +1,6 @@
 # Emotion Classification from Facial Expressions
 
-A Deep Learning based Emotion Detection project that classifies human facial expressions into different emotion categories using CNN and Transfer Learning models.
+A Deep Learning-based Emotion Detection project that classifies human facial expressions into different emotion categories using CNN and Transfer Learning models.
 
 ---
 
@@ -24,13 +24,15 @@ This project compares multiple Deep Learning architectures and analyzes their pe
 
 # Dataset
 
-- The project uses the FER-2013 (Facial Expression Recognition) dataset.
-- The dataset used for this task consists of 48x48 pixel grayscale images of faces. The faces have been automatically centered and scaled so that each face occupies a similar amount of space within the image. Note that the dataset is imbalanced, which poses a challenge for training accurate models.
+The project uses the FER-2013 (Facial Expression Recognition) dataset.
 
+The dataset consists of 48x48 grayscale facial images. The faces are automatically centered and scaled to occupy a similar amount of space in each image. The dataset is imbalanced, which creates challenges during model training and affects minority emotion classes.
+
+---
 
 # Models Used
 
-The project includes training and evaluation of 4 different models.
+The project includes training 4 different models.
 
 ---
 
@@ -45,16 +47,16 @@ The project includes training and evaluation of 4 different models.
 
 ### Performance
 
-- Training Accuracy: 63.92% 
+- Training Accuracy: 63.92%
 - Validation Accuracy: 55.48%
-- Macro F1-Score: 0.14 
-- Weighted F1-Score: 0.17 
-
----
 
 ### Observations
 
-The "Disgust" class showed very poor performance due to class imbalance.
+- The model learned basic facial features successfully.
+- The "Disgust" class showed very poor performance due to class imbalance.
+- Overfitting was observed during training.
+
+---
 
 ## Model 2 — CNN with Data Augmentation
 
@@ -76,11 +78,13 @@ The "Disgust" class showed very poor performance due to class imbalance.
 - Training Accuracy: 54.31%
 - Validation Accuracy: 53.04%
 
----
 ### Observations
 
 - Data augmentation helped reduce overfitting compared to the basic CNN model.
 - The model achieved slightly better generalization performance.
+- Performance improvement was limited because of dataset imbalance.
+
+---
 
 ## Model 3 — Transfer Learning with VGG16
 
@@ -101,10 +105,8 @@ The "Disgust" class showed very poor performance due to class imbalance.
 
 ### Performance
 
-- Training Accuracy: 74.30% 
-- Validation Accuracy: 63.07% 
-
-
+- Training Accuracy: 74.30%
+- Validation Accuracy: 63.07%
 
 ### Observations
 
@@ -114,6 +116,7 @@ The "Disgust" class showed very poor performance due to class imbalance.
 - Overfitting was reduced, and the model showed better generalization capability on unseen data.
 
 ---
+
 ## Model 4 — Transfer Learning with ResNet50
 
 ### Architecture
@@ -131,13 +134,10 @@ The "Disgust" class showed very poor performance due to class imbalance.
 - Improved feature extraction
 - Reduced vanishing gradient problem
 
-
 ### Performance
 
-- Training Accuracy: 58.55% 
-- Validation Accuracy: 58.76% 
-
-
+- Training Accuracy: 58.55%
+- Validation Accuracy: 58.76%
 
 ### Observations
 
@@ -145,6 +145,28 @@ The "Disgust" class showed very poor performance due to class imbalance.
 - Residual connections helped the model learn deeper facial representations effectively.
 - The "Disgust" class remained difficult to classify because of severe class imbalance and limited samples.
 - Compared to earlier CNN models, ResNet50 provided more stable validation performance and better generalization.
+
+---
+
+# Final Selected Model
+
+After comparing all models, the VGG16 Transfer Learning model was selected as the final model because it achieved the best overall performance.
+
+### Final Model Performance
+
+| Metric | Value |
+|--------|--------|
+| Training Accuracy | 74.30% |
+| Validation Accuracy | 63.07% |
+
+### Reason for Selection
+
+- Highest validation accuracy among all models
+- Better feature extraction capability
+- Reduced overfitting
+- Better generalization on unseen facial images
+
+---
 
 # Project Workflow
 
@@ -170,4 +192,3 @@ The "Disgust" class showed very poor performance due to class imbalance.
 - Scikit-learn
 
 ---
-
