@@ -22,7 +22,7 @@ This project compares multiple Deep Learning architectures and analyzes their pe
 
 ---
 
-# Dataset
+# Dataset 
 
 The project uses the FER-2013 (Facial Expression Recognition) dataset.
 
